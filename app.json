@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/presetfood/presetfood",
     "pages/eat/eat",
+    "pages/presetaddress/presetaddress",
+    "pages/presetfood/presetfood",
     "pages/index/index",
     "pages/address/index" ,
     "pages/other/index"

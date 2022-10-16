@@ -1,2 +1,5 @@
 <!--pages/other/index.wxml-->
-<view class="container"></view>
+<view class="container">
+  <image src="/icon/gugu_text.png" mode="aspectFit" style="height: 86rpx;width: 240rpx;"></image>
+  <image src="/icon/gugu.png" mode="aspectFit" style="height: 112rpx;width: 112rpx;"></image>
+</view>

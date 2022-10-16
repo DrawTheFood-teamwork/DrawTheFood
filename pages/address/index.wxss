@@ -1,1 +1,33 @@
 /* pages/address/index.wxss */
+.card {
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+  width: 270rpx;
+  height: 360rpx;
+  border-radius: 24rpx;
+}
+
+.cardup{
+  background: -webkit-linear-gradient(90deg, rgba(255, 195, 0, 1) 0%, rgba(255, 222, 0, 1) 48.38%, rgba(255, 238, 0, 1) 100%);
+}
+
+.card .card_border {
+  margin: 20rpx auto;
+  width: 230rpx;
+  height: 320rpx;
+  border: 2rpx solid rgba(255, 141, 26, 1);
+}
+.card .card_border .box_center {
+  display: flex;
+  justify-content: center;
+  margin: 50% auto;
+  width: 170rpx;
+  height: 80rpx;
+  background: radial-gradient(50% 50%, rgba(255, 244, 209, 1) 0%, rgba(255, 141, 26, 0.21) 80.29%, rgba(255, 141, 26, 0) 100%);
+}
+
+.card .card_border .box_center #card {
+  margin-top: 20rpx;
+  width: 96rpx;
+  height: 36rpx;
+}
