@@ -1,2 +1,2 @@
 <!--pages/other/index.wxml-->
-<text>pages/other/index.wxml</text>
+<view class="container"></view>

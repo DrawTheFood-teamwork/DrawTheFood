@@ -1,18 +1,20 @@
 {
   "pages":[
+    "pages/eat/eat",
     "pages/index/index",
     "pages/address/index" ,
-    "pages/other/index" 
+    "pages/other/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFF4D1",
     "navigationBarTitleText": "DrawTheFood",
     "navigationBarTextStyle":"black"
   },
   "tabBar":{
+    "selectedColor": "#FF8D1A",
     "list":[{
-      "pagePath":"pages/index/index",  
+      "pagePath":"pages/eat/eat",  
       "text":"吃啥",
       "iconPath":"icon/restaurant2.png",
       "selectedIconPath":"icon/restaurant-2-line.png"
@@ -25,7 +27,7 @@
       "pagePath":"pages/other/index", 
       "text":"更多",
       "iconPath":"icon/other.png",
-      "selectedIconPath":"icon/road-map-line2.png"
+      "selectedIconPath":"icon/other2.png"
     }]
   },
   "style": "v2",
