@@ -1,1 +1,25 @@
 /* pages/presetaddress/presetaddress.wxss */
+.scorllBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.scorllBox .addressItem {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 592rpx;
+  height: 112rpx;
+  border-bottom: 2rpx solid rgba(229, 229, 229, 1);
+}
+
+.scorllBox .addressItem .item_text {
+  font-size: 34rpx;
+  line-height: 112rpx;
+}
+
+.scorllBox .addressItem .item_check {
+  padding-top: 35rpx;
+}

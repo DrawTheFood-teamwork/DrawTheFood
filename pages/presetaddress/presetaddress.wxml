@@ -4,7 +4,14 @@
     <view class="blue_top"></view>
     <view class="box_contain">
       <view class="box_item">
-        
+        <scroll-view class="scorllBox" scroll-y="true">
+          <view wx:for="{{addressArray}}" class="addressItem" wx:key="{{item.id}}">
+            <view class="item_text">{{item.value}}</view>
+            <view class="item_check">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+          </view>
+        </scroll-view>
       </view>
     </view>
   </view>

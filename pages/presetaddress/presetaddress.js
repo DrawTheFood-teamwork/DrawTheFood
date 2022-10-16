@@ -5,7 +5,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    addressArray:[
+      {
+        id:0,
+        value:"一饭一楼"
+      },
+      {
+        id:1,
+        value:"一饭二楼"
+      },
+      {
+        id:2,
+        value:"二饭一楼"
+      },
+      {
+        id:3,
+        value:"二饭二楼"
+      },
+      {
+        id:4,
+        value:"三饭一楼"
+      },
+      {
+        id:5,
+        value:"三饭二楼"
+      },
+      {
+        id:6,
+        value:"四饭一楼"
+      },
+      {
+        id:7,
+        value:"四饭二楼"
+      }
+      ],
+    
   },
 
   /**

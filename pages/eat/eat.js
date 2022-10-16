@@ -5,14 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
+    presetfoodURL:"/pages/presetfood/presetfood"
+  },
 
+  /**
+   * 
+   */
+  onPresetFood(){
+    wx.navigateTo({
+      url: this.data.presetfoodURL
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+  
   },
 
   /**

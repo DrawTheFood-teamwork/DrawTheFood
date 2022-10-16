@@ -20,5 +20,7 @@
   </view>
   <!-- 有bug，行内式才能使用宽度 -->
   <button class="highlight_btn" style="width:70%;">命运抉择</button>
-  <button class="white_btn" style="width:70%;">修改预设</button>
+  <button class="white_btn" style="width:70%;" bindtap="onPresetFood">修改预设</button>
+
+
 </view>

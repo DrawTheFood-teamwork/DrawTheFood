@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    presetAddress:'/pages/presetaddress/presetaddress'
+  },
 
+  onpresetAddress(){
+    wx.navigateTo({
+      url: this.data.presetAddress,
+    })
   },
 
   /**

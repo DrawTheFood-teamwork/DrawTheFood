@@ -5,10 +5,13 @@
     <view class="box_contain">
       <view class="box_item">
         <view class="item_text">偏好设置</view>
-        <view class="item_contain">
-        无偏好
-        <image src="/icon/select_more.png" alt="" class="select_more"/>
-        </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="item_contain picker">
+            <view>{{array[index]}}</view>
+            <image src="/icon/select_more.png" alt="" class="select_more"/>
+          </view>
+          </picker>
+        
 
         <view class="item_text">预设菜单</view>
         <view class="item_contain">菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名菜名 菜名 菜名</view>

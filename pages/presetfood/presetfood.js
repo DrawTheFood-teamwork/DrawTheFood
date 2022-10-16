@@ -5,7 +5,40 @@ Page({
    * 页面的初始数据
    */
   data: {
+    array: ['无偏好', '早餐', '午餐', '下午茶','晚餐','夜宵'],
+    objectArray: [
+      {
+        id: 0,
+        name: '无偏好'
+      },
+      {
+        id: 1,
+        name: '早餐'
+      },
+      {
+        id: 2,
+        name: '午餐'
+      },
+      {
+        id: 3,
+        name: '下午茶'
+      },
+      {
+        id: 4,
+        name: '晚餐'
+      },
+      {
+        id: 5,
+        name: '夜宵'
+      }
+    ],
+    index: 0,
+  },
 
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value
+    })
   },
 
   /**
