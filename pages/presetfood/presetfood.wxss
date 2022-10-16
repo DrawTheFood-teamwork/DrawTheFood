@@ -1,0 +1,25 @@
+/* pages/presetfood/presetfood.wxss */
+/* item中的标题 */
+.preset_box .box_contain .box_item .item_text {
+  margin-left: 20rpx;
+  margin-top: 32rpx;
+  font-weight: 600;
+  font-size: 32rpx;
+}
+
+/* item中的内容 */
+.preset_box .box_contain .box_item .item_contain {
+  display: flex;
+  justify-content: space-between;
+  width: 530rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  padding: 34rpx;
+  border-radius: 40rpx;
+  background: rgba(255, 244, 209, 1);
+}
+
+.preset_box .box_contain .box_item .item_contain .select_more{
+  width: 56rpx;
+  height: 56rpx;
+}

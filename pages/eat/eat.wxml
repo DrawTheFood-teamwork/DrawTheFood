@@ -1,2 +1,24 @@
 <!--pages/eat/eat.wxml-->
-<view class="container"></view>
+<view class="container">
+  <view class="box">
+    <view id="box_title">##吃点啥##</view>
+
+    <view id="box_payment">-----已在线支付-----</view>
+
+    <view id="box_paytime">下单时间：2022/10/11 18:17:54</view>
+
+    <view id="order">
+      <view id="food">
+        ????
+      </view>
+      <view id="food_num">
+        x1
+      </view>
+    </view>
+
+    <view id="end_title">*****吃点啥*****</view>
+  </view>
+  <!-- 有bug，行内式才能使用宽度 -->
+  <button class="highlight_btn" style="width:70%;">命运抉择</button>
+  <button class="white_btn" style="width:70%;">修改预设</button>
+</view>

@@ -1,15 +1,71 @@
 /**app.wxss**/
+/**app.wxss**/
 .container {
-  /* height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box; */
+  padding: 60rpx 0;
+  box-sizing: border-box;
   height: 100%;
   background-color: #FFF4D1;
 } 
+
 page{
   height: 100%;
+}
+
+.highlight_btn{
+  /* 黄色高亮按钮 */
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 35rpx;
+  color: #fff;
+  background-color: #FFC300;
+  border-radius: 35rpx;
+  margin-top: 60rpx;
+  box-shadow: 4rpx 4rpx 8rpx -6rpx black;
+}
+
+.white_btn{
+  /* 白色按钮 */ 
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 35rpx;
+  color: #FFC300;
+  background-color: #fff;
+  border-radius: 35rpx;
+  margin-top: 30rpx;
+  box-shadow: 4rpx 4rpx 8rpx -6rpx black;
+}
+
+.preset_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preset_box .blue_top {
+  width: 220rpx;
+  height: 58rpx;
+  background-color: #A4B2EB;
+  z-index: 10;
+      box-shadow: 6rpx 7rpx 8rpx 1rpx rgba(0, 0, 0, 0.25);
+}
+
+.preset_box .box_contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -24rpx;
+  background: rgba(255, 195, 0, 1);
+  box-shadow: 6rpx 7rpx 8rpx 1rpx rgba(0, 0, 0, 0.25);
+  width: 690rpx;
+  height: 1068rpx;
+}
+
+.preset_box .box_contain .box_item{
+  margin-top: 24rpx;
+  width: 642rpx;
+  height: 1010rpx;
+  background-color: #fff;
 }
