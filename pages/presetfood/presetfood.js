@@ -41,10 +41,12 @@ Page({
   bindPickerChange: function (e) {
     const preferX=this.data.prefer
     preferX.value=this.data.array[e.detail.value];
+    preferX.fooddetial=this.data.objectArray[e.detail.value].fooddetial
     this.setData({
       index: e.detail.value,
       prefer: preferX
     })
+    console.log(this.data.prefer);
   },
 
   onfooddetialconfirm:function(e){
