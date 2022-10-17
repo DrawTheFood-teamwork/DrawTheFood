@@ -5,12 +5,22 @@
     <view class="box_contain">
       <view class="box_item">
         <scroll-view class="scorllBox" scroll-y="true">
-          <view wx:for="{{addressArray}}" class="addressItem" wx:key="{{item.id}}">
-            <view class="item_text">{{item.value}}</view>
-            <view class="item_check">
-              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
-            </view>
-          </view>
+          <checkbox-group bindchange="onallSelect">
+            <label class="addressItem">
+              <view class="item_text">修改可见范围</view>
+              <view class="item_check">
+                <checkbox value="{{allSelect.value}}" checked="{{allSelect.checked}}"></checkbox>
+              </view>
+            </label>
+          </checkbox-group>
+          <checkbox-group bindchange="onselectAddresss">
+            <label wx:for="{{addressArray}}" class="addressItem" wx:key="{{item.id}}">
+              <view class="item_text">{{item.value}}</view>
+              <view class="item_check">
+                <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+            </label>
+          </checkbox-group>
         </scroll-view>
       </view>
     </view>

@@ -8,7 +8,8 @@ Page({
     addressArray:[
       {
         id:0,
-        value:"一饭一楼"
+        value:"一饭一楼",
+        checked:true
       },
       {
         id:1,
@@ -39,7 +40,52 @@ Page({
         value:"四饭二楼"
       }
       ],
+    allSelect:{
+      value:'allselect',
+      checked:false
+    }
+  },
+
+  onselectAddresss:function(e){
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+
+    const addressArray = this.data.addressArray
+    const values = e.detail.value
     
+    for (let i = 0, lenI = addressArray.length; i < lenI; ++i) {
+      addressArray[i].checked = false
+
+      for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
+        if (addressArray[i].value === values[j]) {
+          addressArray[i].checked = true
+          break
+        }
+      }
+    }
+
+    this.setData({
+      addressArray
+    })
+  },
+
+  onallSelect:function(e){
+    const value=e.detail.value
+    const addressArray=this.data.addressArray
+    if(value.length==1){
+      for(let i=0; i<addressArray.length; i++){
+        addressArray[i].checked=true;
+      }
+      this.setData({
+        addressArray
+      })
+    }else{
+      for(let i=0; i<addressArray.length; i++){
+        addressArray[i].checked=false;
+      }
+      this.setData({
+        addressArray
+      })
+    }
   },
 
   /**
