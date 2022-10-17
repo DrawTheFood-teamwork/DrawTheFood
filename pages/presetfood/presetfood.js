@@ -17,7 +17,7 @@ Page({
       },
       {
         id: 2,
-        name: '午餐'
+        name: '午餐',
       },
       {
         id: 3,
@@ -33,11 +33,27 @@ Page({
       }
     ],
     index: 0,
+    prefer:{
+      value:'无偏好'
+    }
   },
 
   bindPickerChange: function (e) {
+    const preferX=this.data.prefer
+    preferX.value=this.data.array[e.detail.value];
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      prefer: preferX
+    })
+  },
+
+  onfooddetialconfirm:function(e){
+    const objectArray=this.data.objectArray
+    const index=this.data.index
+
+    objectArray[index].fooddetial=e.detail.value
+    this.setData({
+      objectArray:objectArray
     })
   },
 
