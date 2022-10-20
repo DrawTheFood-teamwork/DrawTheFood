@@ -1,4 +1,6 @@
 // pages/presetaddress/presetaddress.js
+
+const app = getApp()
 Page({
 
   /**
@@ -40,10 +42,7 @@ Page({
         value:"四饭二楼"
       }
       ],
-    allSelect:{
-      value:'allselect',
-      checked:false
-    }
+    allSelect:false
   },
 
   onselectAddresss:function(e){
@@ -69,30 +68,34 @@ Page({
   },
 
   onallSelect:function(e){
-    const value=e.detail.value
-    const addressArray=this.data.addressArray
-    if(value.length==1){
-      for(let i=0; i<addressArray.length; i++){
-        addressArray[i].checked=true;
-      }
-      this.setData({
-        addressArray
+    // 若点击之前为true
+    let preAddress = this.data.addressArray
+    let globalAddress = app.globalData.selectedAddress
+    if(this.data.allSelect){
+      this.setData({allSelect:false})
+      preAddress.map(item => {
+        item.checked=false
+        globalAddress=[]
+        return item
       })
-    }else{
-      for(let i=0; i<addressArray.length; i++){
-        addressArray[i].checked=false;
-      }
-      this.setData({
-        addressArray
+    } else {
+      this.setData({allSelect:true})
+      globalAddress=[]
+      preAddress.map(item => {
+        globalAddress.push(item.value)
+        item.checked=true
+        return item
       })
     }
+    app.globalData.selectedAddress=globalAddress
+    this.setData({addressArray:preAddress})
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad (options){
+    // console.log(app.globalData.selectedAddress);
   },
 
   /**

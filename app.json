@@ -1,10 +1,9 @@
 {
   "pages":[
+    "pages/address/index" ,
+    "pages/presetaddress/presetaddress",
     "pages/presetfood/presetfood",
     "pages/eat/eat",
-    "pages/presetaddress/presetaddress",
-    "pages/address/index" ,
-    "pages/index/index",
     "pages/other/index"
   ],
   "window":{
