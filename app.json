@@ -4,12 +4,12 @@
     "pages/presetaddress/presetaddress",
     "pages/presetfood/presetfood",
     "pages/eat/eat",
-    "pages/other/index"
+    "pages/other/index" 
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FFF4D1",
-    "navigationBarTitleText": "DrawTheFood",
+    "navigationBarTitleText": "DrawTheFood", 
     "navigationBarTextStyle":"black"
   },
   "tabBar":{

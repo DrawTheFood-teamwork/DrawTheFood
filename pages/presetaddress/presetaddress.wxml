@@ -9,7 +9,7 @@
             <label class="addressItem">
               <view class="item_text">修改可见范围</view>
               <view class="item_check">
-                <checkbox value="{{allSelect}}" checked="{{allSelect ? true : false}}"></checkbox>
+                <checkbox value="{{allSelect}}" checked="{{allSelect ? true : false}}" ></checkbox>
               </view>
             </label>
           </checkbox-group>
@@ -17,7 +17,7 @@
             <label wx:for="{{addressArray}}" class="addressItem" wx:key="id" enable-flex="true">
               <view class="item_text">{{item.value}}</view>
               <view class="item_check">
-                <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+                <CheckboxItem id="{{item.id}}" value="{{item.value}}" allSelect="{{allSelect}}"></CheckboxItem>
               </view>
             </label>
           </checkbox-group>

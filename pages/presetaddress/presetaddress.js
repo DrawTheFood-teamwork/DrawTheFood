@@ -46,8 +46,6 @@ Page({
   },
 
   onselectAddresss:function(e){
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-
     const addressArray = this.data.addressArray
     const values = e.detail.value
     
@@ -56,7 +54,7 @@ Page({
 
       for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
         if (addressArray[i].value === values[j]) {
-          addressArray[i].checked = true
+          addressArray[i].checked = true 
           break
         }
       }
@@ -68,26 +66,27 @@ Page({
   },
 
   onallSelect:function(e){
+    console.log(e);
     // 若点击之前为true
     let preAddress = this.data.addressArray
     let globalAddress = app.globalData.selectedAddress
     if(this.data.allSelect){
       this.setData({allSelect:false})
       preAddress.map(item => {
-        item.checked=false
-        globalAddress=[]
+        item.checked = false
+        globalAddress = []
         return item
       })
     } else {
       this.setData({allSelect:true})
-      globalAddress=[]
+      globalAddress = []
       preAddress.map(item => {
         globalAddress.push(item.value)
-        item.checked=true
+        item.checked = true
         return item
       })
     }
-    app.globalData.selectedAddress=globalAddress
+    app.globalData.selectedAddress = globalAddress
     this.setData({addressArray:preAddress})
   },
 

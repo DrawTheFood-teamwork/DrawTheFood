@@ -1,0 +1,4 @@
+<!--components/checkboxItem/index.wxml-->
+<view bindtap="handleClick">
+  <checkbox value="{{value}}" checked="{{checked}}"></checkbox> 
+</view>

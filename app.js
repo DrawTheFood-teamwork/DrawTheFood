@@ -14,6 +14,6 @@ App({
     })
   },
   globalData: {
-    selectedAddress:[]
+    selectedAddress:["一饭一楼"]
   }
 })
