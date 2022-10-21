@@ -7,14 +7,14 @@ Component({
   properties: {
     id:Number,
     value:String,
-    allSelect:Boolean
+    allSelect:Boolean,
+    checked:Boolean 
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    checked:false
   },
 
   pageLifetimes: {
@@ -48,6 +48,7 @@ Component({
       }
       this.setData({checked:!status})
       app.globalData.selectedAddress = addressSelected
-    }
+      this.triggerEvent('observeall',{},{})
+    },
   }
 })

@@ -1,12 +1,17 @@
 <!--pages/address/index.wxml-->
 <view class="container">
-  <view class="card cardup">
+  <!-- <view class="card cardup">
     <view class="card_border">
       <view class="box_center">
           <image src="/icon/card.png" mode="scaleToFill" id="card"></image>
       </view>
-    </view>
+    </view> -->
+    <view class="card cardface">
+      <view class="result">二饭一楼</view>
+      <view class="box_bottom">
+          <image src="/icon/Marinelyn.png" mode="scaleToFill" id="cardtag"></image>
+      </view>
   </view>
-  <button class="highlight_btn" style="width:70%;">命运抉择</button>
+  <button class="highlight_btn" style="width:70%;" bindtap="handleChoose">命运抉择</button> 
   <button class="white_btn" style="width:70%;" bindtap="onpresetAddress">修改预设</button>
 </view>

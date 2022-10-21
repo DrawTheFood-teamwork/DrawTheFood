@@ -11,83 +11,66 @@ Page({
       {
         id:0,
         value:"一饭一楼",
-        checked:true
       },
       {
         id:1,
-        value:"一饭二楼"
+        value:"一饭二楼",
       },
       {
         id:2,
-        value:"二饭一楼"
+        value:"二饭一楼",
       },
       {
         id:3,
-        value:"二饭二楼"
+        value:"二饭二楼",
       },
       {
         id:4,
-        value:"三饭一楼"
+        value:"三饭一楼",
       },
       {
         id:5,
-        value:"三饭二楼"
+        value:"三饭二楼",
       },
       {
         id:6,
-        value:"四饭一楼"
+        value:"四饭一楼",
       },
       {
         id:7,
-        value:"四饭二楼"
+        value:"四饭二楼",
       }
       ],
     allSelect:false
   },
 
-  onselectAddresss:function(e){
-    const addressArray = this.data.addressArray
-    const values = e.detail.value
-    
-    for (let i = 0, lenI = addressArray.length; i < lenI; ++i) {
-      addressArray[i].checked = false
-
-      for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
-        if (addressArray[i].value === values[j]) {
-          addressArray[i].checked = true 
-          break
-        }
-      }
-    }
-
-    this.setData({
-      addressArray
-    })
-  },
-
-  onallSelect:function(e){
-    console.log(e);
+  setAllSelect:function(){
     // 若点击之前为true
     let preAddress = this.data.addressArray
-    let globalAddress = app.globalData.selectedAddress
+    const status = this.data.allSelect
+
     if(this.data.allSelect){
-      this.setData({allSelect:false})
       preAddress.map(item => {
         item.checked = false
-        globalAddress = []
         return item
       })
     } else {
-      this.setData({allSelect:true})
-      globalAddress = []
       preAddress.map(item => {
-        globalAddress.push(item.value)
         item.checked = true
         return item
       })
     }
-    app.globalData.selectedAddress = globalAddress
-    this.setData({addressArray:preAddress})
+    app.globalData.selectedAddress = status? []:this.data.addressArray
+    this.setData({addressArray:preAddress,allSelect:!status})
+  },
+
+  observeAll(e) {
+    // 监控是否全选
+    if(app.globalData.selectedAddress.length === this.data.addressArray.length){
+      this.setData({allSelect:true})
+    } else {
+      this.setData({allSelect:false})
+    }
   },
 
   /**

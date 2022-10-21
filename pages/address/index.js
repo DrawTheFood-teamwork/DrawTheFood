@@ -1,4 +1,5 @@
 // pages/address/index.js
+const app = getApp()
 Page({
 
   /**
@@ -12,6 +13,10 @@ Page({
     wx.navigateTo({
       url: this.data.presetAddress,
     })
+  },
+
+  handleChoose() {
+    const selectedAddress = app.globalData.selectedAddress
   },
 
   /**
