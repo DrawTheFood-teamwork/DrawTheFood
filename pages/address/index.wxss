@@ -26,8 +26,27 @@
   background: radial-gradient(50% 50%, rgba(255, 244, 209, 1) 0%, rgba(255, 141, 26, 0.21) 80.29%, rgba(255, 141, 26, 0) 100%);
 }
 
-.card .card_border .box_center #card {
-  margin-top: 20rpx;
+.cardface {
+  position: relative;
+  background: rgba(255, 231, 150, 1);
+}
+
+.cardface .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50% auto;
+  width: 170rpx;
+  height: 80rpx;
+  background: radial-gradient(50% 50%, rgba(255, 244, 209, 1) 0%, rgba(255, 141, 26, 0.21) 80.29%, rgba(255, 141, 26, 0) 100%);
+ color: rgba(245, 122, 0, 1);
+}
+
+.card  .box_bottom #cardtag{
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translateX(-50%);
   width: 96rpx;
   height: 36rpx;
 }

@@ -3,21 +3,27 @@
   <view class="preset_box">
     <view class="blue_top"></view>
     <view class="box_contain">
-      <view class="box_item">
-        <scroll-view class="scorllBox" scroll-y="true">
-          <checkbox-group bindchange="onallSelect">
+      <view class="box_item" binditemchange='onallSelect'>
+        <scroll-view class="scorllBox" scroll-y="true" enable-flex="true">
+          <checkbox-group bindchange="setAllSelect">
             <label class="addressItem">
               <view class="item_text">修改可见范围</view>
               <view class="item_check">
-                <checkbox value="{{allSelect.value}}" checked="{{allSelect.checked}}"></checkbox>
+                <checkbox checked="{{allSelect}}" addressArray="{{addressArray}}"></checkbox>
               </view>
             </label>
           </checkbox-group>
-          <checkbox-group bindchange="onselectAddresss">
-            <label wx:for="{{addressArray}}" class="addressItem" wx:key="{{item.id}}">
+          <checkbox-group>
+            <label wx:for="{{addressArray}}" class="addressItem" wx:key="id" enable-flex="true">
               <view class="item_text">{{item.value}}</view>
               <view class="item_check">
-                <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+                <CheckboxItem 
+                id="{{item.id}}" 
+                value="{{item.value}}" 
+                checked="{{item.checked}}" 
+                allSelect="{{allSelect}}"
+                bind:observeall="observeAll"
+                ></CheckboxItem>
               </view>
             </label>
           </checkbox-group>

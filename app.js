@@ -14,6 +14,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    selectedAddress:["四饭二楼"]
   }
 })

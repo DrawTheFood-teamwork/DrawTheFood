@@ -1,4 +1,6 @@
 // pages/presetaddress/presetaddress.js
+
+const app = getApp()
 Page({
 
   /**
@@ -9,90 +11,80 @@ Page({
       {
         id:0,
         value:"一饭一楼",
-        checked:true
       },
       {
         id:1,
-        value:"一饭二楼"
+        value:"一饭二楼",
       },
       {
         id:2,
-        value:"二饭一楼"
+        value:"二饭一楼",
       },
       {
         id:3,
-        value:"二饭二楼"
+        value:"二饭二楼",
       },
       {
         id:4,
-        value:"三饭一楼"
+        value:"三饭一楼",
       },
       {
         id:5,
-        value:"三饭二楼"
+        value:"三饭二楼",
       },
       {
         id:6,
-        value:"四饭一楼"
+        value:"四饭一楼",
       },
       {
         id:7,
-        value:"四饭二楼"
+        value:"四饭二楼",
       }
       ],
-    allSelect:{
-      value:'allselect',
-      checked:false
-    }
+    allSelect:false
   },
 
-  onselectAddresss:function(e){
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-
-    const addressArray = this.data.addressArray
-    const values = e.detail.value
-    
-    for (let i = 0, lenI = addressArray.length; i < lenI; ++i) {
-      addressArray[i].checked = false
-
-      for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
-        if (addressArray[i].value === values[j]) {
-          addressArray[i].checked = true
-          break
-        }
-      }
-    }
-
-    this.setData({
-      addressArray
+  returnSelectedArray(data) {
+    const arr = data.map(item => {
+      return item.value
     })
+    return arr
   },
 
-  onallSelect:function(e){
-    const value=e.detail.value
-    const addressArray=this.data.addressArray
-    if(value.length==1){
-      for(let i=0; i<addressArray.length; i++){
-        addressArray[i].checked=true;
-      }
-      this.setData({
-        addressArray
+  setAllSelect:function(){
+    // 若点击之前为true
+    let preAddress = this.data.addressArray
+    const status = this.data.allSelect
+
+    if(this.data.allSelect){
+      preAddress.map(item => {
+        item.checked = false
+        return item
       })
-    }else{
-      for(let i=0; i<addressArray.length; i++){
-        addressArray[i].checked=false;
-      }
-      this.setData({
-        addressArray
+    } else {
+      preAddress.map(item => {
+        item.checked = true
+        return item
       })
+    }
+    app.globalData.selectedAddress = status? []:this.returnSelectedArray(this.data.addressArray)
+    this.setData({addressArray:preAddress,allSelect:!status})
+  },
+
+  observeAll(e) {
+    // 监控是否全选
+    if(app.globalData.selectedAddress.length === this.data.addressArray.length){
+      this.setData({allSelect:true})
+    } else {
+      this.setData({allSelect:false})
     }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad (options){
+    // console.log(app.globalData.selectedAddress);
   },
 
   /**
