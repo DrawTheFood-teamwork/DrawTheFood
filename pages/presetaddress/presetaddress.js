@@ -44,6 +44,13 @@ Page({
     allSelect:false
   },
 
+  returnSelectedArray(data) {
+    const arr = data.map(item => {
+      return item.value
+    })
+    return arr
+  },
+
   setAllSelect:function(){
     // 若点击之前为true
     let preAddress = this.data.addressArray
@@ -60,7 +67,7 @@ Page({
         return item
       })
     }
-    app.globalData.selectedAddress = status? []:this.data.addressArray
+    app.globalData.selectedAddress = status? []:this.returnSelectedArray(this.data.addressArray)
     this.setData({addressArray:preAddress,allSelect:!status})
   },
 

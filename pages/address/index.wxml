@@ -7,7 +7,7 @@
       </view>
     </view> -->
     <view class="card cardface">
-      <view class="result">二饭一楼</view>
+      <view class="result">{{result}}</view>
       <view class="box_bottom">
           <image src="/icon/Marinelyn.png" mode="scaleToFill" id="cardtag"></image>
       </view>

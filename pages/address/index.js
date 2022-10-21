@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    presetAddress:'/pages/presetaddress/presetaddress'
+    presetAddress:'/pages/presetaddress/presetaddress',
+    result:''
   },
 
   onpresetAddress(){
@@ -17,6 +18,8 @@ Page({
 
   handleChoose() {
     const selectedAddress = app.globalData.selectedAddress
+    const result = selectedAddress[parseInt(Math.random() * selectedAddress.length, 10)]
+    this.setData({result:result})
   },
 
   /**
