@@ -1,17 +1,23 @@
 <!--pages/address/index.wxml-->
 <view class="container">
-  <!-- <view class="card cardup">
+<view class="card_wrap">
+  <view class="card cardface" animation="{{animationFace}}">
+    <view class="result">{{result}}</view>
+    <view class="box_bottom">
+      <image src="/icon/Marinelyn.png" mode="scaleToFill" id="cardtag"></image>
+    </view>
+  </view> 
+  <view class="card cardup" animation="{{animationBack}}">
     <view class="card_border">
       <view class="box_center">
-          <image src="/icon/card.png" mode="scaleToFill" id="card"></image>
+        <image src="/icon/card.png" mode="scaleToFill" id="card"></image>
       </view>
-    </view> -->
-    <view class="card cardface">
-      <view class="result">{{result}}</view>
-      <view class="box_bottom">
-          <image src="/icon/Marinelyn.png" mode="scaleToFill" id="cardtag"></image>
-      </view>
+    </view>
   </view>
-  <button class="highlight_btn" style="width:70%;" bindtap="handleChoose">命运抉择</button> 
+</view>
+  <button class="highlight_btn" style="width:70%;" bindtap="handleChoose">
+  <view wx:if="{{isChange===false}}">命运抉择</view>
+  <view wx:else="{{isChange===true}}">换一个</view>
+  </button>
   <button class="white_btn" style="width:70%;" bindtap="onpresetAddress">修改预设</button>
 </view>

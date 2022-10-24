@@ -84,7 +84,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options){
-    // console.log(app.globalData.selectedAddress);
+    if(app.globalData.selectedAddress.length === this.data.addressArray.length){
+      this.setData({allSelect:true})
+    }
   },
 
   /**

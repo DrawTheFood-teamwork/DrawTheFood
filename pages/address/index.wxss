@@ -1,5 +1,14 @@
 /* pages/address/index.wxss */
+.card_wrap {
+  position: relative;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+  width: 270rpx;
+  height: 360rpx;
+}
+
 .card {
+  position: absolute;
   margin-top: 80rpx;
   margin-bottom: 80rpx;
   width: 270rpx;
@@ -18,6 +27,7 @@
   border: 2rpx solid rgba(255, 141, 26, 1);
 }
 .card .card_border .box_center {
+  position: relative;
   display: flex;
   justify-content: center;
   margin: 50% auto;
@@ -26,9 +36,19 @@
   background: radial-gradient(50% 50%, rgba(255, 244, 209, 1) 0%, rgba(255, 141, 26, 0.21) 80.29%, rgba(255, 141, 26, 0) 100%);
 }
 
+.card .card_border .box_center #card{
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translateX(-50%);
+  width: 96rpx;
+  height: 36rpx;
+}
+
 .cardface {
-  position: relative;
+  position: absolute;
   background: rgba(255, 231, 150, 1);
+  transform: rotateY(-90deg);
 }
 
 .cardface .result {
