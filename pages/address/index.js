@@ -7,7 +7,9 @@ Page({
    */
   data: {
     presetAddress:'/pages/presetaddress/presetaddress',
-    result:''
+    result:'',
+    animationBack: {},
+    isChange:false
   },
 
   onpresetAddress(){
@@ -20,6 +22,62 @@ Page({
     const selectedAddress = app.globalData.selectedAddress
     const result = selectedAddress[parseInt(Math.random() * selectedAddress.length, 10)]
     this.setData({result:result})
+    if(this.data.isChange){
+      // this.changeAnimation()
+    }else {
+      this.getAnimation()
+    }
+  },
+
+  getAnimation() {
+    this.animationBack.rotateY(90).step({
+      duration:600
+    })
+    this.setData({animationBack: this.animationBack.export()})
+
+    this.animationFace.rotateY(0).step({
+      duration:600,
+      delay:400
+    })
+    this.setData({
+      animationFace: this.animationFace.export(),
+      isChange:true
+    })
+  },
+
+  changeAnimation() {
+    this.animationFace.rotateY(-90).step({
+      duration:600,
+    })
+    this.setData({
+      animationFace: this.animationFace.export(),
+    })
+
+    this.animationBack.rotateY(0).step({
+      duration:600,
+      delay:400
+    })
+    this.setData({animationBack: this.animationBack.export()})
+
+    console.log(this.data.animationBack);
+    console.log(this.data.animationFace);
+
+    this.animationBack.rotateY(180).step({
+      duration:600,
+      delay:1000
+    })
+    this.setData({animationBack: this.animationBack.export()})
+
+    this.animationFace.rotateY(90).step({
+      duration:600,
+      delay:1000
+    })
+    this.setData({
+      animationFace: this.animationFace.export(),
+      isChange:true
+    })
+    console.log(this.data.animationBack);
+    console.log(this.data.animationFace);
   },
 
   /**
@@ -33,14 +91,22 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    var animationBack = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    var animationFace = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    this.animationBack=animationBack
+    this.animationFace=animationFace
   },
 
   /**
