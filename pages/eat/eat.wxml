@@ -5,7 +5,7 @@
 
     <view id="box_payment">-----已在线支付-----</view>
 
-    <view id="box_paytime">下单时间：2022/10/11 18:17:54</view>
+    <view id="box_paytime">下单时间：{{time}}</view>
 
     <view id="order">
       <swiper indicator-dots="false" 	indicator-color="transparent" 	indicator-active-color="transparent" vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" current="{{current}} " bindchange="swiperChange">

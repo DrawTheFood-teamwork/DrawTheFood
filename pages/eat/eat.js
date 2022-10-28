@@ -1,4 +1,5 @@
 // pages/eat/eat.js
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -12,7 +13,10 @@ Page({
     interval:50,
     duration:50,
     current:0,
-    btnText:"命运抉择"
+    btnText:"命运抉择",
+    myInterval:'',
+    cont:0,
+    time:''
     },
   chooseFood(){
     if(this.data.btnText=="命运抉择"){
@@ -23,27 +27,37 @@ Page({
         duration:90,
       })
     }else{
-      let cont=0;
-      let myInterval=setInterval(()=>{
-        cont++;
-        console.log(cont);
-        if(cont<15){
+      this.setData({
+        btnText:"随机",
+        autoplay:true,
+        interval:90,
+        duration:90,
+      })
+      clearInterval(this.data.myInterval)
+      this.setData({
+        cont:0,
+        myInterval:setInterval(()=>{
           this.setData({
-            autoplay:false,
+            cont:this.data.cont+1
           })
-          this.setData({
-            autoplay:true,
-            interval:this.data.interval+20,
-            duration:this.data.duration+20
-          })
-        }else{
-          this.setData({
-            autoplay:false,
-            btnText:"命运抉择"
-          })
-          clearInterval(myInterval);
-        }
-      },300)
+          if(this.data.cont<10){
+            this.setData({
+              autoplay:false,
+            })
+            this.setData({
+              autoplay:true,
+              interval:this.data.interval+20,
+              duration:this.data.duration+20
+            })
+          }else{
+            this.setData({
+              autoplay:false,
+              btnText:"命运抉择"
+            })
+            clearInterval(this.data.myInterval);
+          }
+        },300)
+      })
     }
   },
 
@@ -71,5 +85,18 @@ Page({
       })
     }
     console.log(this.data.name,this.data.foodDetail);
+    
+  },
+  onLoad: function (options) {
+    var time=util.formatTime(new Date());
+      this.setData({
+        time:time
+      })
+    setInterval(()=>{
+      var time=util.formatTime(new Date());
+      this.setData({
+        time:time
+      })
+    },1000)
   }
 })
