@@ -5,7 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    presetfoodURL:"/pages/presetfood/presetfood"
+    presetfoodURL:"/pages/presetfood/presetfood",
+    name:'',
+    foodDetail:[],
+    autoplay:false,
+    interval:50,
+    duration:50,
+    current:0,
+    btnText:"命运抉择"
+    },
+  chooseFood(){
+    if(this.data.btnText=="命运抉择"){
+      this.setData({
+        btnText:"随机",
+        autoplay:true,
+        interval:90,
+        duration:90,
+      })
+    }else{
+      let cont=0;
+      let myInterval=setInterval(()=>{
+        cont++;
+        console.log(cont);
+        if(cont<15){
+          this.setData({
+            autoplay:false,
+          })
+          this.setData({
+            autoplay:true,
+            interval:this.data.interval+20,
+            duration:this.data.duration+20
+          })
+        }else{
+          this.setData({
+            autoplay:false,
+            btnText:"命运抉择"
+          })
+          clearInterval(myInterval);
+        }
+      },300)
+    }
   },
 
   /**
@@ -17,59 +56,20 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-  
+  swiperChange(e){
+    this.setData({
+      current:e.detail.current
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    let foods = wx.getStorageSync('foods');
+    if(foods) {
+      this.setData({
+        name:foods.name,
+        foodDetail:foods.foodDetail.split(' ')
+      })
+    }
+    console.log(this.data.name,this.data.foodDetail);
   }
 })

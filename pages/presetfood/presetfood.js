@@ -9,55 +9,57 @@ Page({
     objectArray: [
       {
         id: 0,
-        name: '无偏好'
+        name: '无偏好',
+        foodDetail:''
       },
       {
         id: 1,
-        name: '早餐'
+        name: '早餐',
+        foodDetail:''
       },
       {
         id: 2,
         name: '午餐',
+        foodDetail:''
       },
       {
         id: 3,
-        name: '下午茶'
+        name: '下午茶',
+        foodDetail:''
       },
       {
         id: 4,
-        name: '晚餐'
+        name: '晚餐',
+        foodDetail:''
       },
       {
         id: 5,
-        name: '夜宵'
+        name: '夜宵',
+        foodDetail:''
       }
     ],
-    index: 0,
-    prefer:{
-      value:'无偏好'
-    }
+    index: 0
   },
 
   bindPickerChange: function (e) {
-    const preferX=this.data.prefer
-    preferX.value=this.data.array[e.detail.value];
-    preferX.fooddetial=this.data.objectArray[e.detail.value].fooddetial
     this.setData({
-      index: e.detail.value,
-      prefer: preferX
+      index:e.detail.value
     })
-    console.log(this.data.prefer);
+    let index=this.data.index;
+    let objectArray=this.data.objectArray;
+    wx.setStorageSync('foods', objectArray[index])
   },
 
-  onfooddetialconfirm:function(e){
-    const objectArray=this.data.objectArray
-    const index=this.data.index
-
-    objectArray[index].fooddetial=e.detail.value
+  userblur:function(e) {
+    let index=this.data.index;
+    let objectArray=this.data.objectArray;
+    objectArray[index].foodDetail=e.detail.value;
     this.setData({
       objectArray:objectArray
     })
+    wx.setStorageSync('foods', objectArray[index])
   },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -84,14 +86,12 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
   },
 
   /**

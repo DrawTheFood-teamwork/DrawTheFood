@@ -8,18 +8,27 @@
     <view id="box_paytime">下单时间：2022/10/11 18:17:54</view>
 
     <view id="order">
-      <view id="food">
-        ????
-      </view>
-      <view id="food_num">
-        x1
-      </view>
+      <swiper indicator-dots="false" 	indicator-color="transparent" 	indicator-active-color="transparent" vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" current="{{current}} " bindchange="swiperChange">
+        <block wx:for="{{foodDetail}}" wx:key="*this">
+          <swiper-item>
+            <view id="food_box">
+              <view id="food">
+                {{item}}
+              </view>
+              <view id="food_num">
+                x1
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
     </view>
 
     <view id="end_title">*****吃点啥*****</view>
   </view>
   <!-- 有bug，行内式才能使用宽度 -->
-  <button class="highlight_btn" style="width:70%;">命运抉择</button>
+  <button class="highlight_btn" style="width:70%;" bindtap="chooseFood">{{btnText}}</button>
   <button class="white_btn" style="width:70%;" bindtap="onPresetFood">修改预设</button>
 
 

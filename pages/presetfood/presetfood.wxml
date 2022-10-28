@@ -15,7 +15,7 @@
 
         <view class="item_text">预设菜单</view>
         <view class="item_contain">
-          <textarea name="" id="" cols="50" rows="10" value="{{objectArray[index].fooddetial}}" bindconfirm="onfooddetialconfirm"></textarea>
+          <textarea name="" id="" cols="50" rows="10" value="{{objectArray[index].foodDetail}}" bindblur="userblur"></textarea>
         </view>
       </view>
     </view>
