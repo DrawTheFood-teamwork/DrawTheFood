@@ -1,3 +1,5 @@
+const app = getApp()
+
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -17,7 +19,8 @@ Component({
   data: {
     flag: true,
     _change:'',
-    select_food:''
+    select_food:'',
+    select_text:''
   },
   /**
    * 组件的方法列表
@@ -48,10 +51,24 @@ Component({
     },
 
     _change(){
-      // this.data._change();
-      wx.setStorageSync('select_food', this.data.select_food)
-      console.log(this.data.select_food);
+      let select_food = this.data.select_food;
+      let select_text = this.data.select_text;
+      let index = app.globalData.index;
+      let objectArray = app.globalData.objectArray;
+      let food_Detail = objectArray[index].food_Detail;
+      for (let i = 0; i <food_Detail.length; i++){
+        if(food_Detail[i]==select_food){
+          food_Detail[i]=select_text;
+        }
+      }
+      app.globalData.objectArray[index].food_Detail=food_Detail;
       this.triggerEvent("close");
+    },
+
+    select_text_change(e){
+      this.setData({
+        select_text:e.detail.value
+      })
     }
   }
 })

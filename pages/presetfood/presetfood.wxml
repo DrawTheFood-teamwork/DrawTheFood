@@ -23,7 +23,7 @@
               bind:close="_close"
             ></popup>
             <view class="food_item add_until">新增+</view>
-            <view bindtap="xxxsss">按钮</view>
+            <!-- <view bindtap="xxxsss">按钮</view> -->
           </scroll-view>
         </view>
       </view>

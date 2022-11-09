@@ -4,7 +4,7 @@
     <view class="wx-popup-title">{{title}}</view>
     <!-- <view class="wx-popup-con" >{{content}}</view> -->
     <view class="wx-popup-con" >
-      <input type="text" auto-focus placeholder="请输入" />
+      <input type="text" auto-focus placeholder="请输入" bindblur="select_text_change"/>
       <text style="color: rgb(184, 184, 184);font-size: small;">tip:将会把'{{select_food}}'修改成上面内容</text>
     </view>
     <view class="wx-popup-btn">
