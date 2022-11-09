@@ -14,8 +14,17 @@
         
 
         <view class="item_text">预设菜单</view>
-        <view class="item_contain">
-          <textarea name="" id="" cols="50" rows="10" value="{{objectArray[index].foodDetail}}" bindblur="userblur"></textarea>
+        <view class="item_contain" id="food_space">
+          <!-- <textarea name="" id="" cols="50" rows="10" value="{{objectArray[index].foodDetail}}" bindblur="userblur"></textarea> -->
+          <scroll-view scroll-y>
+            <view class="food_item" wx:for="{{objectArray[index].food_Detail}}" bindtap="showPopup" data-name="{{item}}">{{item}}</view>
+            <popup id='popup'
+              title="修改或删除该菜品"
+              bind:close="_close"
+            ></popup>
+            <view class="food_item add_until">新增+</view>
+            <view bindtap="xxxsss">按钮</view>
+          </scroll-view>
         </view>
       </view>
     </view>

@@ -1,4 +1,5 @@
 // pages/presetfood/presetfood.js
+const app = getApp()
 Page({
 
   /**
@@ -10,7 +11,9 @@ Page({
       {
         id: 0,
         name: '无偏好',
-        foodDetail:'粥 面包 馒头 全麦面包 馒头 粥类 杂粮 豆浆 脱脂牛奶 鸡蛋 苹果 蔬菜 油条 汉堡 蛋糕 饼干 薯条 火腿 方便面 北京烤鸭 泰餐 寿司 烧鸡 盖浇饭 砂锅 大排档 米线 满汉全席 西餐 麻辣烫 关东煮 自助餐 炒面 快餐 水果 西北风 馄饨 火锅 烧烤 泡面 速冻水饺'
+        // foodDetail:'粥 面包 馒头 全麦面包 馒头 粥类 杂粮 豆浆 脱脂牛奶 鸡蛋 苹果 蔬菜 油条 汉堡 蛋糕 饼干 薯条 火腿 方便面 北京烤鸭 泰餐 寿司 烧鸡 盖浇饭 砂锅 大排档 米线 满汉全席 西餐 麻辣烫 关东煮 自助餐 炒面 快餐 水果 西北风 馄饨 火锅 烧烤 泡面 速冻水饺'
+        foodDetail:'',
+        food_Detail:['粥','面包','馒头','全麦面包','豆浆','脱脂牛奶','鸡蛋','苹果','蔬菜','油条','汉堡']
       },
       {
         id: 1,
@@ -60,19 +63,26 @@ Page({
     wx.setStorageSync('foods', objectArray[index])
   },
 
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+  },
+  
+  showPopup(e){
+    this.popup.showPopup(e);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+    this.popup = this.selectComponent("#popup");
+  },
 
+  _close() {
+    console.log("你点击了关闭按钮");
+    this.popup.hidePopup();
   },
 
   /**
