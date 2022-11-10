@@ -22,7 +22,10 @@
               title="修改或删除该菜品"
               bind:close="_close"
             ></popup>
-            <view class="food_item add_until">新增+</view>
+            <view class="food_item add_until" bindtap="showPopup_add">新增+</view>
+            <popup_add id='popup_add' title="新增菜品"
+              bind:close="_close_add">
+            </popup_add>
             <!-- <view bindtap="xxxsss">按钮</view> -->
           </scroll-view>
         </view>

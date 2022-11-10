@@ -1,5 +1,6 @@
 // pages/eat/eat.js
 var util = require('../../utils/util.js');
+const app = getApp()
 Page({
 
   /**
@@ -7,7 +8,6 @@ Page({
    */
   data: {
     presetfoodURL:"/pages/presetfood/presetfood",
-    name:'',
     foodDetail:[],
     autoplay:false,
     interval:50,
@@ -61,9 +61,6 @@ Page({
     }
   },
 
-  /**
-   * 
-   */
   onPresetFood(){
     wx.navigateTo({
       url: this.data.presetfoodURL
@@ -77,16 +74,16 @@ Page({
   },
 
   onShow() {
-    let foods = wx.getStorageSync('foods');
+    let index = app.globalData.index;
+    let foods = app.globalData.objectArray[index].food_Detail
     if(foods) {
       this.setData({
-        name:foods.name,
-        foodDetail:foods.foodDetail.split(' ')
+        foodDetail:foods
       })
     }
-    console.log(this.data.name,this.data.foodDetail);
-    
+    console.log(this.data.foodDetail);
   },
+
   onLoad: function (options) {
     var time=util.formatTime(new Date());
       this.setData({

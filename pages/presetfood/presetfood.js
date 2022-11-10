@@ -42,8 +42,13 @@ Page({
     this.popup.showPopup(e);
   },
 
+  showPopup_add(e){
+    this.popup_add.showPopup(e);
+  },
+
   onReady() {
     this.popup = this.selectComponent("#popup");
+    this.popup_add = this.selectComponent("#popup_add");
   },
 
   _close() {
@@ -52,4 +57,9 @@ Page({
     this.popup.hidePopup();
   },
 
+  _close_add() {
+    console.log("你点击了关闭按钮");
+    this.dataRefresh();
+    this.popup_add.hidePopup();
+  }
 })
