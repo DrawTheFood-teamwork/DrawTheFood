@@ -8,7 +8,7 @@
     <view id="box_paytime">下单时间：{{time}}</view>
 
     <view id="order">
-      <swiper indicator-dots="false" 	indicator-color="transparent" 	indicator-active-color="transparent" vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" current="{{current}} " bindchange="swiperChange">
+      <swiper indicator-dots="false" 	indicator-color="transparent" 	indicator-active-color="transparent" vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" current="{{current}} " animationfinish="swiperChange">
         <block wx:for="{{foodDetail}}" wx:key="*this">
           <swiper-item>
             <view id="food_box">
