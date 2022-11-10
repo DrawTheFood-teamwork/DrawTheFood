@@ -10,6 +10,7 @@
     <view class="wx-popup-btn">
       <view bindtap="_close" class="popup_btn">取消</view>
       <view bindtap="_change" class="popup_btn">修改</view>
+      <view bindtap="_delete" class="popup_btn delete_btn">删除</view>
     </view>
   </view>
 </view>

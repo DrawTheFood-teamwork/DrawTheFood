@@ -45,8 +45,13 @@
   width: 90rpx;
   padding: 20rpx;
   text-align: center;
-  margin-left: 110rpx;
+  margin-left: 50rpx;
   background-color: #eeeeee;
   border-radius: 15rpx;
+}
+
+.delete_btn{
+  background-color: rgb(253, 159, 159);
+  color: #fff;
 }
 

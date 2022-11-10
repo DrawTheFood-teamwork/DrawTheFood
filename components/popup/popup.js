@@ -69,6 +69,21 @@ Component({
       this.setData({
         select_text:e.detail.value
       })
+    },
+
+    _delete(){
+      let select_food = this.data.select_food;
+      let select_text = this.data.select_text;
+      let index = app.globalData.index;
+      let objectArray = app.globalData.objectArray;
+      let food_Detail = objectArray[index].food_Detail;
+      for (let i = 0; i <food_Detail.length; i++){
+        if(food_Detail[i]==select_food){
+          food_Detail.splice(i,1);
+        }
+      }
+      app.globalData.objectArray[index].food_Detail=food_Detail;
+      this.triggerEvent("close");
     }
   }
 })
