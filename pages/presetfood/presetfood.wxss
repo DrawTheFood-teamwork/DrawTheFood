@@ -7,6 +7,26 @@
   font-size: 32rpx;
 }
 
+#food_space{
+  height: 360rpx;
+}
+
+#food_space scroll-view{
+  float: left;
+}
+
+#food_space .food_item {
+  font-size: small;
+  display: inline-block;
+  background-color: rgb(252, 208, 151);
+  margin: 5rpx;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+#food_space .add_until {
+  background-color: rgb(250, 170, 150);
+}
+
 /* item中的内容 */
 .preset_box .box_contain .box_item .item_contain {
   display: flex;

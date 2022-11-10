@@ -1,0 +1,15 @@
+<!--components/popup/popup.wxml-->
+<view class="wx-popup" style="margin:-{{windowHeight/2}}px 0 0 -{{windowWidth/2}}px" hidden="{{flag}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">{{title}}</view>
+    <!-- <view class="wx-popup-con" >{{content}}</view> -->
+    <view class="wx-popup-con" >
+      <input type="text" auto-focus placeholder="请输入" bindblur="select_text_change"/>
+      <text style="color: rgb(184, 184, 184);font-size: small;">tip:将会把文本框中的内容新增到菜单内容</text>
+    </view>
+    <view class="wx-popup-btn">
+      <view bindtap="_close" class="popup_btn">取消</view>
+      <view bindtap="_change" class="popup_btn">新增</view>
+    </view>
+  </view>
+</view>

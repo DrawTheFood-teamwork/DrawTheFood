@@ -1,117 +1,65 @@
 // pages/presetfood/presetfood.js
+const app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    array: ['无偏好', '早餐', '午餐', '下午茶','晚餐','夜宵'],
-    objectArray: [
-      {
-        id: 0,
-        name: '无偏好',
-        foodDetail:''
-      },
-      {
-        id: 1,
-        name: '早餐',
-        foodDetail:''
-      },
-      {
-        id: 2,
-        name: '午餐',
-        foodDetail:''
-      },
-      {
-        id: 3,
-        name: '下午茶',
-        foodDetail:''
-      },
-      {
-        id: 4,
-        name: '晚餐',
-        foodDetail:''
-      },
-      {
-        id: 5,
-        name: '夜宵',
-        foodDetail:''
-      }
-    ],
-    index: 0
+    array: '',
+    objectArray: '',
+    index: ''
   },
 
   bindPickerChange: function (e) {
-    this.setData({
-      index:e.detail.value
-    })
-    let index=this.data.index;
-    let objectArray=this.data.objectArray;
-    wx.setStorageSync('foods', objectArray[index])
+    app.globalData.index=e.detail.value;
+    let index=app.globalData.index;
+    let objectArray=app.globalData.objectArray;
+    wx.setStorageSync('foods', objectArray[index]);
+    this.dataRefresh();
   },
 
   userblur:function(e) {
-    let index=this.data.index;
-    let objectArray=this.data.objectArray;
+    let index=app.globalData.index;
+    let objectArray=app.globalData.objectArray;
     objectArray[index].foodDetail=e.detail.value;
-    this.setData({
-      objectArray:objectArray
-    })
-    wx.setStorageSync('foods', objectArray[index])
+    app.globalData.objectArray=objectArray;
+    wx.setStorageSync('foods', objectArray[index]);
+    this.dataRefresh();
   },
 
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-
+    this.dataRefresh();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  // 更新本页面data
+  dataRefresh(){
+    this.setData({
+      array:app.globalData.array,
+      objectArray:app.globalData.objectArray,
+      index:app.globalData.index
+    })
+  },
+  
+  showPopup(e){
+    this.popup.showPopup(e);
+  },
+
+  showPopup_add(e){
+    this.popup_add.showPopup(e);
+  },
+
   onReady() {
-
+    this.popup = this.selectComponent("#popup");
+    this.popup_add = this.selectComponent("#popup_add");
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  _close() {
+    console.log("你点击了关闭按钮");
+    this.dataRefresh();
+    this.popup.hidePopup();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  _close_add() {
+    console.log("你点击了关闭按钮");
+    this.dataRefresh();
+    this.popup_add.hidePopup();
   }
 })

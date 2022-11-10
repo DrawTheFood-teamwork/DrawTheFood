@@ -1,0 +1,57 @@
+/* components/popup/popup.wxss */
+.wx-popup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+.popup-container {
+  position: fixed;
+  left: 10%;
+  top: 20%;
+  width: 80%;
+  max-width: 600rpx;
+  border-radius: 20rpx;
+  box-sizing: bordre-box;
+  background: #fff;
+  z-index: 2000;
+}
+.wx-popup-title {
+  width: 100%;
+  padding: 28rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-bottom: 5rpx solid #9EA3BA;
+  box-sizing: border-box;
+}
+.wx-popup-con {
+  margin: 50rpx 10rpx;
+  text-align: center;
+  padding: 0 86rpx;
+}
+.wx-popup-con text {
+  padding-bottom: 10rpx;
+}
+.content_money {
+  color: #FFB258;
+}
+.popup_btn {
+  display: inline-block;
+  width: 90rpx;
+  padding: 20rpx;
+  text-align: center;
+  margin-left: 50rpx;
+  background-color: #eeeeee;
+  border-radius: 15rpx;
+}
+
+.delete_btn{
+  background-color: rgb(253, 159, 159);
+  color: #fff;
+}
+
