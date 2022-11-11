@@ -23,8 +23,8 @@ Page({
       this.setData({
         btnText:"随机",
         autoplay:true,
-        interval:90,
-        duration:90,
+        interval:50,
+        duration:50,
       })
     }else{
       this.setData({
@@ -78,7 +78,9 @@ Page({
     let foods = app.globalData.objectArray[index].food_Detail
     if(foods) {
       this.setData({
-        foodDetail:foods
+        foodDetail:foods,
+        autoplay:false,
+        btnText:"命运抉择"
       })
     }
   },
