@@ -22,9 +22,9 @@ Page({
     const selectedAddress = app.globalData.selectedAddress
     const result = selectedAddress[parseInt(Math.random() * selectedAddress.length, 10)]
     this.setData({result:result})
-    if(this.data.isChange){
-      // this.changeAnimation()
-    }else {
+    // 监控卡片动画
+    app.globalData.isAddressCardAnimate=true
+    if(!this.data.isChange){
       this.getAnimation()
     }
   },
@@ -45,45 +45,10 @@ Page({
     })
   },
 
-  changeAnimation() {
-    this.animationFace.rotateY(-90).step({
-      duration:600,
-    })
-    this.setData({
-      animationFace: this.animationFace.export(),
-    })
-
-    this.animationBack.rotateY(0).step({
-      duration:600,
-      delay:400
-    })
-    this.setData({animationBack: this.animationBack.export()})
-
-    console.log(this.data.animationBack);
-    console.log(this.data.animationFace);
-
-    this.animationBack.rotateY(180).step({
-      duration:600,
-      delay:1000
-    })
-    this.setData({animationBack: this.animationBack.export()})
-
-    this.animationFace.rotateY(90).step({
-      duration:600,
-      delay:1000
-    })
-    this.setData({
-      animationFace: this.animationFace.export(),
-      isChange:true
-    })
-    console.log(this.data.animationBack);
-    console.log(this.data.animationFace);
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  onLoad() {
 
   },
 

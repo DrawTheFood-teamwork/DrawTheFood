@@ -52,13 +52,11 @@ Page({
   },
 
   _close() {
-    console.log("你点击了关闭按钮");
     this.dataRefresh();
     this.popup.hidePopup();
   },
 
   _close_add() {
-    console.log("你点击了关闭按钮");
     this.dataRefresh();
     this.popup_add.hidePopup();
   }

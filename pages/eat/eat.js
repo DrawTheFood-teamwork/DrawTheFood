@@ -83,7 +83,6 @@ Page({
         btnText:"命运抉择"
       })
     }
-    console.log(this.data.foodDetail);
   },
 
   onLoad: function (options) {
