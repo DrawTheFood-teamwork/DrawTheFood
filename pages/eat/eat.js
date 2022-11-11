@@ -81,7 +81,6 @@ Page({
         foodDetail:foods
       })
     }
-    console.log(this.data.foodDetail);
   },
 
   onLoad: function (options) {
